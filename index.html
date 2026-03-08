@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Archivo de boletines y publicaciones de ANCA-ADE — Análisis político, historia y derechos.">
+<title>ANCA · ADE — Archivo de Publicaciones</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --negro:    #080808;
+    --rojo:     #c41e1e;
+    --crema:    #f4efe4;
+    --arena:    #e2d9c5;
+    --gris1:    #1a1a1a;
+    --gris2:    #2e2e2e;
+    --gris3:    #888;
+    --dorado:   #b89a14;
+    --verde:    #1a5c2a;
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--negro);
+    color: var(--crema);
+    font-family: 'Source Serif 4', Georgia, serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ════════════════════════════
+     MASTHEAD
+  ════════════════════════════ */
+  .masthead {
+    background: var(--crema);
+    color: var(--negro);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid var(--negro);
+  }
+
+  .masthead-ticker {
+    background: var(--rojo);
+    color: var(--crema);
+    padding: 8px 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .ticker-inner {
+    display: inline-block;
+    animation: ticker 28s linear infinite;
+    padding-left: 100%;
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 56px 0;
+    border-bottom: 1px solid #ccc;
+    gap: 32px;
+  }
+
+  .masthead-left { flex: 1; }
+
+  .org-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--rojo);
+    margin-bottom: 10px;
+  }
+
+  .org-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(72px, 11vw, 148px);
+    line-height: 0.85;
+    color: var(--negro);
+    letter-spacing: 0.03em;
+  }
+
+  .org-title span { color: var(--rojo); }
+
+  .org-full-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  .masthead-right {
+    text-align: right;
+    padding-top: 12px;
+    min-width: 200px;
+  }
+
+  .masthead-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: #777;
+    line-height: 2.2;
+    text-transform: uppercase;
+  }
+
+  .masthead-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 56px;
+    background: var(--negro);
+    color: var(--crema);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a {
+    color: var(--crema);
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; }
+
+  /* ════════════════════════════
+     HERO STRIP
+  ════════════════════════════ */
+  .hero-strip {
+    padding: 64px 56px 0;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--gris1);
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .hero-left {
+    padding-right: 52px;
+    border-right: 1px solid var(--gris1);
+    padding-bottom: 64px;
+  }
+
+  .section-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: var(--rojo);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--rojo);
+    flex-shrink: 0;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1.07;
+    color: var(--crema);
+    margin-bottom: 24px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--rojo);
+  }
+
+  .hero-desc {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: #b0a898;
+    max-width: 520px;
+    margin-bottom: 36px;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--rojo);
+    color: var(--crema);
+    text-decoration: none;
+    padding: 14px 28px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    transition: background 0.25s, transform 0.2s;
+  }
+
+  .hero-cta:hover { background: #a01818; transform: translateX(3px); }
+  .hero-cta::after { content: '→'; }
+
+  .hero-right {
+    padding-left: 52px;
+    padding-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .stat-block {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--gris1);
+  }
+
+  .stat-block:last-child { border-bottom: none; }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 54px;
+    color: var(--crema);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-num span { color: var(--rojo); }
+
+  .stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gris3);
+  }
+
+  /* ════════════════════════════
+     ARCHIVO DE BOLETINES
+  ════════════════════════════ */
+  .archivo {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 64px 56px;
+  }
+
+  .archivo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--gris1);
+  }
+
+  .archivo-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: var(--crema);
+    letter-spacing: 0.05em;
+  }
+
+  .archivo-count {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--gris3);
+    text-transform: uppercase;
+  }
+
+  /* ── TARJETA BOLETÍN ── */
+  .boletin-featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--gris1);
+    margin-bottom: 2px;
+    background: var(--gris1);
+    gap: 2px;
+  }
+
+  .boletin-main {
+    background: #0d0d0d;
+    padding: 44px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .boletin-main::before {
+    content: attr(data-num);
+    position: absolute;
+    right: -12px;
+    bottom: -24px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 180px;
+    color: rgba(255,255,255,0.025);
+    line-height: 1;
+    user-select: none;
+  }
+
+  .boletin-badge {
+    display: inline-block;
+    background: var(--rojo);
+    color: var(--crema);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    margin-bottom: 20px;
+  }
+
+  .boletin-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--gris3);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .boletin-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 3.5vw, 46px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--crema);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .boletin-title em { color: var(--rojo); font-style: italic; }
+
+  .boletin-desc {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #999;
+    max-width: 440px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .boletin-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--crema);
+    color: var(--negro);
+    text-decoration: none;
+    padding: 13px 24px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    width: fit-content;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--arena); transform: translateX(3px); }
+  .btn-primary::after { content: '→'; }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--gris2);
+    color: var(--gris3);
+    text-decoration: none;
+    padding: 12px 24px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    width: fit-content;
+    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--crema); color: var(--crema); transform: translateX(3px); }
+  .btn-secondary::after { content: '↗'; }
+
+  /* Panel de anexos / contenidos */
+  .boletin-aside {
+    background: #090909;
+    padding: 44px 36px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .aside-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gris3);
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--gris1);
+  }
+
+  .content-item {
+    display: flex;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid #131313;
+    text-decoration: none;
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+
+  .content-item:last-child { border-bottom: none; }
+  .content-item:hover .content-title { color: var(--rojo); }
+
+  .content-index {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: #222;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 36px;
+    text-align: right;
+    transition: color 0.2s;
+  }
+
+  .content-item:hover .content-index { color: var(--rojo); opacity: 0.4; }
+
+  .content-body { flex: 1; }
+
+  .content-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gris3);
+    margin-bottom: 4px;
+  }
+
+  .content-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--crema);
+    line-height: 1.3;
+    transition: color 0.2s;
+  }
+
+  .content-sub {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  /* ── PRÓXIMOS BOLETINES ── */
+  .proximos {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 56px 80px;
+  }
+
+  .proximos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--gris1);
+  }
+
+  .proximos-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: #333;
+    letter-spacing: 0.05em;
+  }
+
+  .proximos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--gris1);
+  }
+
+  .proximo-card {
+    background: #080808;
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .proximo-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 12px,
+      rgba(255,255,255,0.012) 12px,
+      rgba(255,255,255,0.012) 13px
+    );
+  }
+
+  .proximo-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: #141414;
+    line-height: 1;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+  }
+
+  .proximo-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gris3);
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .proximo-tema {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #3a3a3a;
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
+  }
+
+  .proximo-tema em { color: #4a4a4a; font-style: italic; }
+
+  /* ════════════════════════════
+     FOOTER
+  ════════════════════════════ */
+  footer {
+    background: var(--crema);
+    color: var(--negro);
+    padding: 0;
+    border-top: 3px solid var(--negro);
+  }
+
+  .footer-main {
+    display: grid;
+    grid-template-columns: 2fr 1px 1fr 1px 1fr;
+    gap: 0;
+    padding: 52px 56px;
+    border-bottom: 1px solid #ccc;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .footer-brand { padding-right: 52px; }
+  .footer-col { padding: 0 40px; }
+  .footer-col:last-child { padding-right: 0; }
+  .footer-divider { background: #ccc; }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    line-height: 1;
+    color: var(--negro);
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+  }
+
+  .footer-logo span { color: var(--rojo); }
+
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+
+  .footer-about {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #555;
+    max-width: 320px;
+  }
+
+  .footer-col-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--negro);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .footer-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-list li a {
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px;
+    color: #555;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+
+  .footer-list li a:hover { color: var(--rojo); }
+  .footer-list li a::before { content: '—'; font-size: 10px; color: #ccc; }
+
+  .footer-bottom {
+    padding: 16px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .footer-copy {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: #aaa;
+  }
+
+  .footer-copy span { color: var(--rojo); }
+
+  /* ════════════════════════════
+     INSTRUCCIONES GITHUB
+  ════════════════════════════ */
+  .github-guide {
+    background: #0a0f0a;
+    border: 1px solid #1a2a1a;
+    max-width: 1300px;
+    margin: 0 auto 0;
+    padding: 0 56px;
+  }
+
+  .github-inner {
+    padding: 52px 0;
+    border-top: 1px solid #1a2a1a;
+  }
+
+  .github-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: #4a9e5c;
+    letter-spacing: 0.06em;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .github-title::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: #4a9e5c;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    flex-shrink: 0;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: #111;
+    border: 1px solid #1a1a1a;
+    margin-bottom: 36px;
+  }
+
+  .step {
+    background: #0a0a0a;
+    padding: 24px 20px;
+  }
+
+  .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    color: #4a9e5c;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .step-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #ccc;
+    margin-bottom: 8px;
+  }
+
+  .step-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #666;
+  }
+
+  .step-desc code {
+    background: #111;
+    border: 1px solid #222;
+    color: #4a9e5c;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    padding: 2px 6px;
+    display: inline-block;
+    margin-top: 4px;
+  }
+
+  .structure-box {
+    background: #050505;
+    border: 1px solid #1a2a1a;
+    padding: 24px 28px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    line-height: 2;
+    color: #555;
+  }
+
+  .structure-box .dir { color: #4a9e5c; }
+  .structure-box .file { color: #888; }
+  .structure-box .comment { color: #333; font-style: italic; }
+  .structure-box .highlight { color: var(--crema); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .masthead-top { padding: 32px 24px 0; flex-direction: column; }
+    .masthead-right { text-align: left; }
+    .masthead-bottom { padding: 12px 24px; flex-direction: column; gap: 12px; text-align: center; }
+    .nav-links { justify-content: center; }
+    .hero-strip { grid-template-columns: 1fr; padding: 40px 24px 0; }
+    .hero-left { border-right: none; border-bottom: 1px solid var(--gris1); padding-right: 0; }
+    .hero-right { padding-left: 0; padding-top: 32px; }
+    .archivo, .proximos, .github-guide { padding-left: 24px; padding-right: 24px; }
+    .boletin-featured { grid-template-columns: 1fr; }
+    .proximos-grid, .steps { grid-template-columns: 1fr; }
+    .footer-main { grid-template-columns: 1fr; padding: 32px 24px; }
+    .footer-col { padding: 20px 0; border-top: 1px solid #ccc; }
+    .footer-divider { display: none; }
+    .footer-bottom { padding: 16px 24px; flex-direction: column; gap: 8px; text-align: center; }
+  }
+
+  /* Animación de entrada */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .org-title { animation: rise 0.7s ease both; }
+  .hero-title { animation: rise 0.7s 0.1s ease both; }
+  .hero-desc  { animation: rise 0.7s 0.2s ease both; }
+</style>
+</head>
+<body>
+
+<!-- ══ MASTHEAD ══ -->
+<header class="masthead">
+
+  <div class="masthead-ticker">
+    <span class="ticker-inner">
+      ANCA · ADE &nbsp;·&nbsp; Análisis Político &nbsp;·&nbsp; Historia &nbsp;·&nbsp; Derechos &nbsp;·&nbsp; Memoria &nbsp;·&nbsp; Antifascismo &nbsp;·&nbsp; Costa Rica &nbsp;·&nbsp; Centroamérica &nbsp;·&nbsp; Archivo de Publicaciones &nbsp;·&nbsp; Boletín Especial Nº 01: ¿Qué es el Fascismo? &nbsp;·&nbsp; Anexo: El Fascismo en Costa Rica &nbsp;·&nbsp; ANCA · ADE &nbsp;·&nbsp; Análisis Político &nbsp;·&nbsp; Historia &nbsp;·&nbsp; Derechos &nbsp;·&nbsp; Memoria &nbsp;·&nbsp; Antifascismo &nbsp;·&nbsp; Costa Rica &nbsp;·&nbsp; Centroamérica &nbsp;·&nbsp; Archivo de Publicaciones &nbsp;·&nbsp;
+    </span>
+  </div>
+
+  <div class="masthead-top">
+    <div class="masthead-left">
+      <div class="org-eyebrow">Publicaciones Oficiales</div>
+      <div class="org-title">ANCA<span>·</span>ADE</div>
+      <div class="org-full-name">Archivo de Boletines y Análisis Político</div>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-meta">
+        Marzo 2026<br>
+        Vol. I · Núm. 1<br>
+        Costa Rica<br>
+        ancaade.github.io
+      </div>
+    </div>
+  </div>
+
+  <div class="masthead-bottom">
+    <nav class="nav-links">
+      <a href="#archivo">Archivo</a>
+      <a href="#proximos">Próximos</a>
+      <a href="#publicar">Publicar</a>
+    </nav>
+    <span>Investigación · Educación · Memoria · Antifascismo</span>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<div class="hero-strip">
+  <div class="hero-left">
+    <div class="section-eyebrow">Boletín más reciente</div>
+    <h1 class="hero-title">
+      ¿Qué es el<br><em>Fascismo?</em><br>Una guía crítica
+    </h1>
+    <p class="hero-desc">
+      Origen histórico, características ideológicas, regímenes del siglo XX, el concepto de Ur-Fascismo de Umberto Eco y las manifestaciones del neofascismo contemporáneo. Incluye anexo sobre Costa Rica.
+    </p>
+    <a class="hero-cta" href="boletines/especial-01/index.html">Leer boletín completo</a>
+  </div>
+  <div class="hero-right">
+    <div class="stat-block">
+      <div class="stat-num">02<span>doc.</span></div>
+      <div class="stat-label">Publicaciones disponibles</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">07<span>sec.</span></div>
+      <div class="stat-label">Secciones por boletín</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">I<span>vol.</span></div>
+      <div class="stat-label">Volumen inaugural · 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ARCHIVO ══ -->
+<section class="archivo" id="archivo">
+  <div class="archivo-header">
+    <h2 class="archivo-title">Archivo de Publicaciones</h2>
+    <span class="archivo-count">1 boletín · 1 anexo · 2026</span>
+  </div>
+
+  <!-- Boletín Especial 01 -->
+  <div class="boletin-featured">
+    <div class="boletin-main" data-num="01">
+      <span class="boletin-badge">Boletín Especial</span>
+      <div class="boletin-num">Nº 01 · Marzo 2026 · Análisis Histórico y Político</div>
+      <h3 class="boletin-title">¿Qué es el <em>Fascismo?</em></h3>
+      <p class="boletin-desc">
+        Investigación documental sobre el fascismo: su etimología, contexto histórico, características ideológicas, regímenes del siglo XX, el Ur-Fascismo de Umberto Eco, el neofascismo contemporáneo y las señales de alerta para reconocerlo en el presente.
+      </p>
+      <div class="boletin-links">
+        <a class="btn-primary" href="boletines/especial-01/index.html">Leer boletín principal</a>
+        <a class="btn-secondary" href="boletines/especial-01/anexo-costa-rica.html">Ver anexo: Costa Rica</a>
+      </div>
+    </div>
+
+    <div class="boletin-aside">
+      <div class="aside-label">Contenidos de esta edición</div>
+
+      <a class="content-item" href="boletines/especial-01/index.html#definicion">
+        <div class="content-index">1</div>
+        <div class="content-body">
+          <div class="content-tag">Boletín Principal</div>
+          <div class="content-title">Definición y Etimología</div>
+          <div class="content-sub">Del latín fasces al Estado totalitario</div>
+        </div>
+      </a>
+
+      <a class="content-item" href="boletines/especial-01/index.html#contexto">
+        <div class="content-index">2</div>
+        <div class="content-body">
+          <div class="content-tag">Boletín Principal</div>
+          <div class="content-title">Contexto Histórico</div>
+          <div class="content-sub">1917–1945: causas y consecuencias</div>
+        </div>
+      </a>
+
+      <a class="content-item" href="boletines/especial-01/index.html#caracteristicas">
+        <div class="content-index">3</div>
+        <div class="content-body">
+          <div class="content-tag">Boletín Principal</div>
+          <div class="content-title">9 Características Centrales</div>
+          <div class="content-sub">Los pilares del pensamiento fascista</div>
+        </div>
+      </a>
+
+      <a class="content-item" href="boletines/especial-01/index.html#neofascismo">
+        <div class="content-index">4</div>
+        <div class="content-body">
+          <div class="content-tag">Boletín Principal</div>
+          <div class="content-title">Neofascismo Hoy</div>
+          <div class="content-sub">Cuarta ola y nuevas formas</div>
+        </div>
+      </a>
+
+      <a class="content-item" href="boletines/especial-01/anexo-costa-rica.html">
+        <div class="content-index">+</div>
+        <div class="content-body">
+          <div class="content-tag">Anexo Documental · Costa Rica</div>
+          <div class="content-title">El Fascismo en Costa Rica</div>
+          <div class="content-sub">Del Partido Nazi de 1936 a la nueva ultraderecha</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRÓXIMOS ══ -->
+<section class="proximos" id="proximos">
+  <div class="proximos-header">
+    <h2 class="proximos-title">Próximas Ediciones</h2>
+    <span class="archivo-count">En preparación</span>
+  </div>
+  <div class="proximos-grid">
+    <div class="proximo-card">
+      <div class="proximo-num">02</div>
+      <div class="proximo-tag">En preparación · 2026</div>
+      <div class="proximo-tema">¿Qué es el <em>Neoliberalismo?</em></div>
+    </div>
+    <div class="proximo-card">
+      <div class="proximo-num">03</div>
+      <div class="proximo-tag">En preparación · 2026</div>
+      <div class="proximo-tema">Historia del <em>Movimiento Sindical</em> en Costa Rica</div>
+    </div>
+    <div class="proximo-card">
+      <div class="proximo-num">04</div>
+      <div class="proximo-tag">En preparación · 2026</div>
+      <div class="proximo-tema">Derechos Humanos y <em>Estado de Derecho</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GUÍA GITHUB ══ -->
+<section class="github-guide" id="publicar">
+  <div class="github-inner">
+    <div class="github-title">Cómo publicar este sitio en GitHub Pages</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Crear cuenta y repositorio</div>
+        <p class="step-desc">Entra a <strong style="color:#ccc">github.com</strong>, crea una cuenta gratuita. Luego crea un repositorio nuevo llamado exactamente <code>anca-ade.github.io</code> (o el nombre de usuario que elijan).</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Subir los archivos</div>
+        <p class="step-desc">En la página del repositorio, haz clic en <strong style="color:#ccc">"uploading an existing file"</strong>. Arrastra toda la carpeta del sitio. Sube <code>index.html</code> y la carpeta <code>boletines/</code> con su contenido.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Activar GitHub Pages</div>
+        <p class="step-desc">Ve a <strong style="color:#ccc">Settings → Pages</strong> en tu repositorio. En "Source" selecciona la rama <code>main</code> y la carpeta raíz <code>/ (root)</code>. Guarda los cambios.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">¡Listo! Sitio publicado</div>
+        <p class="step-desc">En 1-2 minutos el sitio estará disponible en <code>anca-ade.github.io</code>. Para agregar nuevos boletines, simplemente sube más archivos HTML a la carpeta <code>boletines/</code>.</p>
+      </div>
+    </div>
+
+    <div class="aside-label" style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:#4a9e5c;margin-bottom:14px;">Estructura de carpetas del sitio</div>
+    <div class="structure-box">
+      <span class="dir highlight">anca-ade.github.io/</span><br>
+      <span class="file">│</span><br>
+      <span class="file">├── <span class="highlight">index.html</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← esta portada</span></span><br>
+      <span class="file">│</span><br>
+      <span class="dir">└── boletines/</span><br>
+      <span class="file">&nbsp;&nbsp;&nbsp;&nbsp;│</span><br>
+      <span class="dir">&nbsp;&nbsp;&nbsp;&nbsp;├── especial-01/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← carpeta del 1er boletín</span></span><br>
+      <span class="file">&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <span class="highlight">index.html</span> &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← boletín principal</span></span><br>
+      <span class="file">&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── <span class="highlight">anexo-costa-rica.html</span></span><br>
+      <span class="file">&nbsp;&nbsp;&nbsp;&nbsp;│</span><br>
+      <span class="dir">&nbsp;&nbsp;&nbsp;&nbsp;├── especial-02/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← próximo boletín (aquí irá)</span></span><br>
+      <span class="file">&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── index.html</span><br>
+      <span class="file">&nbsp;&nbsp;&nbsp;&nbsp;│</span><br>
+      <span class="dir">&nbsp;&nbsp;&nbsp;&nbsp;└── especial-03/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">← y así sucesivamente</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="footer-logo">ANCA<span>·</span>ADE</div>
+      <div class="footer-tagline">Investigación · Educación · Memoria</div>
+      <p class="footer-about">Publicaciones de análisis político, historia y derechos humanos. Nuestros boletines son de acceso libre y uso educativo con atribución.</p>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-col">
+      <div class="footer-col-title">Boletines</div>
+      <ul class="footer-list">
+        <li><a href="boletines/especial-01/index.html">Especial Nº 01 · ¿Qué es el Fascismo?</a></li>
+        <li><a href="boletines/especial-01/anexo-costa-rica.html">Anexo · El Fascismo en Costa Rica</a></li>
+      </ul>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-col">
+      <div class="footer-col-title">Próximas Ediciones</div>
+      <ul class="footer-list">
+        <li><a href="#">Nº 02 · ¿Qué es el Neoliberalismo?</a></li>
+        <li><a href="#">Nº 03 · Movimiento Sindical en CR</a></li>
+        <li><a href="#">Nº 04 · Derechos Humanos y Estado</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 <span>ANCA · ADE</span> — Uso educativo libre con atribución</span>
+    <span class="footer-copy">Costa Rica · ancaade.github.io</span>
+  </div>
+</footer>
+
+</body>
+</html>
